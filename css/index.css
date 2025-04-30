@@ -5,9 +5,6 @@
     src: url(../fonts/Assistant-Regular.ttf);   
 }
 
-
-
-
 body
 {
     margin: 0;
@@ -18,53 +15,89 @@ header
 {
     padding: 50px;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     font-size: 50px;
     color: white;
     background-color: black;
 }
 
 
-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Equal width columns */
-        align-items: stretch;
+header *
+{
+    width: 100%;
+    direction: rtl;
+    margin-block: 10px;
+}
+
+section 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal width columns */
+    align-items: stretch;
+}
+
+section img 
+{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+section p 
+{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    line-height: 1.6;
+    direction: rtl;
+    padding: 120px;
+    margin: 0;
+    /* background-color: aqua; */
+}
+
+@media (width <= 940px) 
+{
+    section {
+    display: grid;
+    grid-template-columns: 1fr; /* Equal width columns */
+    align-items: stretch;
     }
 
-    section img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
-    }
-
-    section p {
-        display: flex;
-        align-items: center;
-        font-size: 24px;
-        line-height: 1.6;
-        direction: rtl;
-        padding: 120px;
-        margin: 0;
-        /* background-color: aqua; */
-    }
-
-
-    @media (width <= 940px) 
+    section img
     {
-        section {
-        display: grid;
-        grid-template-columns: 1fr; /* Equal width columns */
-        align-items: stretch;
-        }
-
-        section img
-        {
-            order: 2;
-        }
-
-        section p
-        {
-            order: 1;
-        }
+        order: 2;
     }
+
+    section p
+    {
+        order: 1;
+    }
+}
+
+@media (width <= 500px) 
+{
+    section p
+    {
+        padding-inline: 30px;
+        padding-block: 60px;
+    }
+}
+
+
+
+
+footer
+{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+        column-gap: 8px;
+    flex-direction: row-reverse;
+}
+
+footer label
+{
+    direction: rtl;
+}
