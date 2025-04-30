@@ -25,21 +25,21 @@ header
 }
 
 
-.man-in-studio {
+section {
         display: grid;
         grid-template-columns: 1fr 1fr; /* Equal width columns */
         
         align-items: stretch;
     }
 
-    .man-in-studio img {
+    section img {
         width: 100%;
         height: auto;
         display: block;
         object-fit: cover;
     }
 
-    .man-in-studio p {
+    section p {
         display: flex;
         align-items: center;
         font-size: 24px;
