@@ -35,6 +35,7 @@ section
     display: grid;
     grid-template-columns: 1fr 1fr; /* Equal width columns */
     align-items: stretch;
+    overflow: hidden;
 }
 
 section img 
@@ -43,6 +44,7 @@ section img
     height: auto;
     display: block;
     object-fit: cover;
+    opacity: 0;
 }
 
 section p 
@@ -54,8 +56,29 @@ section p
     direction: rtl;
     padding: 120px;
     margin: 0;
+    opacity: 0;
     /* background-color: aqua; */
 }
+
+
+.fromLeft {
+            transform: translateX(-100%);
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        .fromRight {
+            transform: translateX(100%);
+            animation: slideIn 1s ease-out forwards;
+        }
+
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
 
 @media (width <= 940px) 
 {

@@ -69,6 +69,10 @@
 
 
 
+
+
+
+
     </main>
 
     <footer>
@@ -76,6 +80,36 @@
         <label>כל הזכויות שמורות לחברת Interviews</label>
         <label>2025</label>
     </footer>
+
+
+
+    <script>
+
+        const observer = new IntersectionObserver(entries =>
+        {
+            entries.forEach(entry =>
+            {
+                if (entry.isIntersecting)
+                {
+                    entry.target.children[0].classList.add("fromLeft");
+                    entry.target.children[1].classList.add("fromRight");
+                }
+            });
+        },
+            {
+                threshold: 0.3
+            });
+
+
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => observer.observe(section));
+
+    </script>
+
+
+
+
+
 
 </body>
 
