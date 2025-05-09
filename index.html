@@ -89,6 +89,41 @@
 
 
 
+        <section>
+
+            <img
+                src="images/micbs64_a_photo_of_a_black_nice_landline_telephone_from_the_1_8e2c3b00-c1d3-4dbf-b968-a9a4b5c2956b_3.png">
+
+            <form class="contact-form" id="contactForm">
+
+                <h2>צור קשר</h2>
+
+                <label for="fullname">שם מלא</label>
+                <input type="text" id="fullname" name="fullname" required />
+
+                <label for="email">כתובת מייל</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone">מספר טלפון</label>
+                <input type="tel" id="phone" name="phone" required />
+
+                <label for="note">הערות</label>
+                <textarea id="note" name="note" rows="4"></textarea>
+
+                <label class="error" id="error-message"></label>
+
+                <button type="submit">שלח</button>
+            </form>
+
+        </section>
+
+
+
+
+
+
+
+
 
 
     </main>
@@ -121,6 +156,81 @@
 
         const sections = document.querySelectorAll('section');
         sections.forEach(section => observer.observe(section));
+
+
+
+
+        document.getElementById("contactForm").addEventListener("submit", function (e)
+        {
+            e.preventDefault();
+
+            const fullname = document.getElementById("fullname").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const note = document.getElementById("note").value.trim();
+            const errorDiv = document.getElementById("error-message");
+
+            // Clear previous errors
+            errorDiv.textContent = "";
+
+            // Validation
+            if (fullname === "" || email === "" || phone === "")
+            {
+                errorDiv.textContent = "Please fill in all required fields.";
+                return;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
+            if (!emailPattern.test(email))
+            {
+                errorDiv.textContent = "Enter a valid email address.";
+                return;
+            }
+
+            const phonePattern = /^[0-9]{7,}$/;
+            if (!phonePattern.test(phone))
+            {
+                errorDiv.textContent = "Phone must be at least 7 digits and numeric.";
+                return;
+            }
+
+            // Data to send
+            const formData = {
+                fullname,
+                email,
+                phone,
+                note
+            };
+
+            // Send to API via POST
+            fetch("https://example.com/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response =>
+                {
+                    if (!response.ok) throw new Error("Network response was not OK");
+                    return response.json();
+                })
+                .then(data =>
+                {
+                    alert("Form submitted successfully!");
+                    document.getElementById("contactForm").reset();
+                })
+                .catch(error =>
+                {
+                    console.error("Error submitting form:", error);
+                    errorDiv.textContent = "An error occurred while submitting the form.";
+                });
+        });
+
+
+
+
+
 
     </script>
 
