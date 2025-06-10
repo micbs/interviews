@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="css/index.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/send-email.js" defer></script>
+
 </head>
 
 <body>
@@ -28,7 +31,7 @@
     <main>
 
         <section>
-            <img src="images/ChatGPT Image Apr 30, 2025, 12_14_12 AM.png">
+            <img src="images/ChatGPT Image May 14, 2025, 06_11_23 PM.png">
             <div>
                 <p>
                     אנחנו בחברת <strong>Interviews</strong> מתמחים בצילום ראיונות אישיים בצורה מקצועית.
@@ -55,6 +58,65 @@
             <img
                 src="images/micbs64_Photography_equipment_includes_a_DSLR_camera_a_microp_4e78ca4f-d17b-4e69-a847-a86f391cf279_0.png">
         </section>
+
+
+
+
+
+        <div id="packages_container">
+            <h1>חבילות צילום ראיונות אישיים</h1>
+            <p>
+                אנו מציעים שלוש חבילות צילום מקצועיות שיאפשרו לכם לשתף את הסיפור שלכם בצורה הכי
+                אותנטית
+                ומרגשת.
+            </p>
+
+            <div class="packages">
+
+                <div>
+                    <h2 style="color: #333;">חבילה בהתאמה אישית</h2>
+                    <p>הפקת וידאו בהתאמה אישית מלאה שתרגש, תפתיע ותספר את הסיפור שלכם בצורה ייחודית.</p>
+                    <ul>
+                        <li>פגישת ייעוץ ותכנון אישי</li>
+                        <li>צילום ללא הגבלה במספר לוקיישנים</li>
+                        <li>הפקת וידאו קולנועית מותאמת אישית</li>
+                    </ul>
+                    <strong>לפי הצעת מחיר מותאמת</strong>
+                </div>
+
+
+                <div>
+                    <h2 style="color: #333;">החבילה המתקדמת</h2>
+                    <p>למי שרוצה שהראיון שלו יקבל מגע אישי, מרגש ומקצועי.</p>
+                    <ul>
+                        <li>צילום 4K איכותי</li>
+                        <li>עד שעתיים צילום בלוקיישן לבחירה</li>
+                        <li>עריכה עם מוזיקה, כתוביות וגרפיקה</li>
+                    </ul>
+                    <strong>החל מ-1,899 ש"ח</strong>
+                </div>
+
+
+                <div>
+                    <h2 style="color: #333;">החבילה הבסיסית</h2>
+                    <p>צילום ראיון אישי בבית הלקוח, כולל:</p>
+                    <ul>
+                        <li>שעתיים של ראיון אישי</li>
+                        <li>צילום באיכות Full HD</li>
+                        <li>הקלטת סאונד מקצועית</li>
+                        <li>קובץ דיגיטלי של כל הריאיון ללא עריכה</li>
+                    </ul>
+                    <strong>החל מ-1,000 ש"ח</strong>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
 
 
 
@@ -110,20 +172,12 @@
                 <label for="note">הערות</label>
                 <textarea id="note" name="note" rows="4"></textarea>
 
-                <label class="error" id="error-message"></label>
+                <label id="message"></label>
 
                 <button type="submit">שלח</button>
             </form>
 
         </section>
-
-
-
-
-
-
-
-
 
 
     </main>
@@ -157,86 +211,7 @@
         const sections = document.querySelectorAll('section');
         sections.forEach(section => observer.observe(section));
 
-
-
-
-        document.getElementById("contactForm").addEventListener("submit", function (e)
-        {
-            e.preventDefault();
-
-            const fullname = document.getElementById("fullname").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const phone = document.getElementById("phone").value.trim();
-            const note = document.getElementById("note").value.trim();
-            const errorDiv = document.getElementById("error-message");
-
-            // Clear previous errors
-            errorDiv.textContent = "";
-
-            // Validation
-            if (fullname === "" || email === "" || phone === "")
-            {
-                errorDiv.textContent = "Please fill in all required fields.";
-                return;
-            }
-
-            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
-            if (!emailPattern.test(email))
-            {
-                errorDiv.textContent = "Enter a valid email address.";
-                return;
-            }
-
-            const phonePattern = /^[0-9]{7,}$/;
-            if (!phonePattern.test(phone))
-            {
-                errorDiv.textContent = "Phone must be at least 7 digits and numeric.";
-                return;
-            }
-
-            // Data to send
-            const formData = {
-                fullname,
-                email,
-                phone,
-                note
-            };
-
-            // Send to API via POST
-            fetch("https://example.com/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            })
-                .then(response =>
-                {
-                    if (!response.ok) throw new Error("Network response was not OK");
-                    return response.json();
-                })
-                .then(data =>
-                {
-                    alert("Form submitted successfully!");
-                    document.getElementById("contactForm").reset();
-                })
-                .catch(error =>
-                {
-                    console.error("Error submitting form:", error);
-                    errorDiv.textContent = "An error occurred while submitting the form.";
-                });
-        });
-
-
-
-
-
-
     </script>
-
-
-
-
 
 
 </body>

@@ -193,11 +193,73 @@ footer label {
   background-color: black;
 }
 
-.contact-form .error {
-}
-
 @media (width <= 500px) {
   .contact-form {
     padding: 50px 20px;
   }
+}
+
+#packages_container {
+  padding-block: 100px;
+  background-color: aliceblue;
+}
+
+#packages_container h1 {
+  margin: 0;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+#packages_container > p {
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.packages {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.packages > div {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.packages > div p {
+  margin: 0;
+  padding-bottom: 5px;
+  text-align: right;
+  direction: rtl;
+}
+
+.packages ul {
+  margin: 10px 0 20px;
+  list-style-type: none;
+  padding: 0 !important;
+}
+
+.packages ul li {
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+  direction: rtl;
+  font-size: 16px;
+  /* background-color: aqua; */
+}
+
+.packages ul li::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url('data:image/svg+xml;utf8,<svg width="12" height="12" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>')
+    no-repeat center center;
+  background-size: contain;
 }
