@@ -264,3 +264,34 @@ footer label {
     no-repeat center center;
   background-size: contain;
 }
+
+@media (width <= 1200px) {
+  .packages {
+    max-width: 600px;
+    margin: auto;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .packages > :nth-child(1) {
+    order: 3;
+  }
+  .packages > :nth-child(2) {
+    order: 2;
+  }
+  .packages > :nth-child(3) {
+    order: 1;
+  }
+}
+
+@media (width <= 700px) {
+  .packages {
+    max-width: 400px;
+  }
+}
+
+@media (width <= 500px) {
+  .packages {
+    max-width: 300px;
+  }
+}
