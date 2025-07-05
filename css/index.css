@@ -65,6 +65,7 @@ header h5 {
   header .phone {
     order: 3;
     text-align: center;
+    align-items: center;
   }
 
   header h1 {
@@ -158,9 +159,10 @@ footer label {
   direction: rtl;
 }
 
+/*************************************************************/
 .contact-form {
   display: grid;
-  grid-template-columns: minmax(0, 300px);
+  grid-template-columns: minmax(0, 400px);
   justify-content: center;
   align-self: center;
   padding: 100px;
@@ -179,6 +181,20 @@ footer label {
   direction: rtl;
 }
 
+.contact-form textarea {
+  direction: rtl;
+}
+
+.contact-form #errorMessage {
+  color: red;
+  margin-block: 20px;
+}
+
+.required::after {
+  content: " *";
+  color: red;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -189,6 +205,7 @@ footer label {
 .contact-form button {
   padding: 20px;
   border: none;
+  font-size: 20px;
   color: white;
   background-color: black;
 }
@@ -198,6 +215,7 @@ footer label {
     padding: 50px 20px;
   }
 }
+/*************************************************************/
 
 #packages_container {
   padding-block: 200px;
@@ -221,7 +239,7 @@ footer label {
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 60px;
 }
 
 .packages > div {

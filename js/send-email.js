@@ -5,26 +5,26 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   const email = document.getElementById("email").value.trim();
   const phone = document.getElementById("phone").value.trim();
   const note = document.getElementById("note").value.trim();
-  const msg = document.getElementById("message");
+  const msg = document.getElementById("errorMessage");
 
   // Clear previous errors
   msg.textContent = "";
 
   // Validation
   if (fullname === "" || email === "" || phone === "") {
-    msg.textContent = "Please fill in all required fields.";
+    msg.textContent = "נא למלא את שדות החובה";
     return;
   }
 
   const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
   if (!emailPattern.test(email)) {
-    msg.textContent = "Enter a valid email address.";
+    msg.textContent = "נא להזין כתובת אי-מייל תקנית";
     return;
   }
 
-  const phonePattern = /^[0-9]{7,}$/;
+  const phonePattern = /^[0-9]{10,}$/;
   if (!phonePattern.test(phone)) {
-    msg.textContent = "Phone must be at least 7 digits and numeric.";
+    msg.textContent = "נא להזין מספר נייד תקני בן 10 ספרות";
     return;
   }
 
