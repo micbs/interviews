@@ -47,6 +47,12 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   const service_id = "service_vlsm0cu";
   const template_id = "template_berr0tx";
 
+  document.querySelector("#contactForm button").disabled = true;
+  document.querySelector("#contactForm button").style.opacity = 0.7;
+  document.querySelector(
+    "#contactForm button"
+  ).innerHTML = `<div class="loader" role="status" aria-label="Loading"></div>`;
+
   emailjs.init("E_b9SUuHaxvjoOIwO");
 
   emailjs
@@ -59,9 +65,18 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     })
     .then(
       (response) => {
-        msg.textContent = "תודה, נחזור אליך בהקדם.";
+        document.querySelector("#contactForm button").disabled = false;
+        document.querySelector("#contactForm button").style.opacity = 1;
+        document.querySelector("#contactForm button").innerHTML = "שלח";
+        document.getElementById("resultMessage").textContent =
+          "תודה, נחזור אליך בהקדם.";
         document.getElementById("contactForm").reset();
       },
-      (error) => (msg.textContent = error.text)
+      (error) => {
+        msg.textContent = error.text;
+        document.querySelector("#contactForm button").disabled = false;
+        document.querySelector("#contactForm button").style.opacity = 1;
+        document.querySelector("#contactForm button").innerHTML = "שלח";
+      }
     );
 });
