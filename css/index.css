@@ -257,13 +257,24 @@ footer label {
 }
 
 .packages > div {
-  border: 1px solid #a8a8a8;
   border-radius: 10px;
-  padding: 60px 20px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding-bottom: 20px;
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.packages > div h2 {
+  margin: 0;
+  padding-block: 10px;
+  border-radius: 20px 20px 0 0;
+  color: white;
+  background-color: black;
+}
+
+.packages > div > div {
+  padding: 20px;
 }
 
 .packages > div p {
@@ -298,6 +309,13 @@ footer label {
   background: url('data:image/svg+xml;utf8,<svg width="12" height="12" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>')
     no-repeat center center;
   background-size: contain;
+}
+
+.packages strong {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
 }
 
 @media (width <= 1200px) {
