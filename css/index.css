@@ -282,6 +282,8 @@ footer label {
   padding-bottom: 5px;
   text-align: right;
   direction: rtl;
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .packages ul {
@@ -298,6 +300,7 @@ footer label {
   column-gap: 10px;
   direction: rtl;
   font-size: 16px;
+  margin-bottom: 4px;
   /* background-color: aqua; */
 }
 
