@@ -224,6 +224,42 @@
         const sections = document.querySelectorAll('section');
         sections.forEach(section => observer.observe(section));
 
+
+
+        (function ()
+        {
+            // Google Apps Script Web App URL (replace with yours)
+            const SHEET_URL = "https://script.google.com/macros/s/AKfycbyXfkd7GQ8QIe4YV5NfGNljqkeUeswbrDIuokQSXQjdaOhZtax9FjlEyDpKiw6ZA6NYeQ/exec";
+
+            // Helper: get query parameter
+            function getParam(name)
+            {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
+            }
+
+            // Check if this is a Google Ads visitor
+            //const gclid = getParam("gclid");
+            const gclid = "hello";
+            if (gclid)
+            {
+                const payload = {
+                    gclid: gclid,
+                    url: window.location.href,
+                    userAgent: navigator.userAgent,
+                    ip: "" // cannot get real IP from browser; leave blank or use external IP service
+                };
+
+                // Send to Google Sheets
+                fetch(SHEET_URL, {
+                    method: "POST",
+                    body: JSON.stringify(payload)
+                }).catch(err => console.error("Log error:", err));
+            }
+        })();
+
+
+
     </script>
 
 
