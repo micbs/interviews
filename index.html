@@ -228,7 +228,7 @@
 
         (function ()
         {
-            // Google Apps Script Web App URL (replace with yours)
+            // Google Apps Script Web App URL
             const SHEET_URL = "https://script.google.com/macros/s/AKfycbyXfkd7GQ8QIe4YV5NfGNljqkeUeswbrDIuokQSXQjdaOhZtax9FjlEyDpKiw6ZA6NYeQ/exec";
 
             // Helper: get query parameter
@@ -240,7 +240,9 @@
 
             // Check if this is a Google Ads visitor
             //const gclid = getParam("gclid");
+
             const gclid = "hello";
+
             if (gclid)
             {
                 const payload = {
