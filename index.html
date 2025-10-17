@@ -12,14 +12,25 @@
     <script src="js/send-email.js" defer></script>
 
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-56T85QV373"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
+        // Google Analytics
         gtag('config', 'G-56T85QV373');
+
+        // Google Ads
+        gtag('config', 'AW-339880408');
+
+    </script>
+
+
+    <!-- Event snippet for Website traffic conversion page -->
+    <script>
+        gtag('event', 'conversion', { 'send_to': 'AW-339880408/DvzxCMLRl9ICENjTiKIB' }); 
     </script>
 
 </head>
