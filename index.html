@@ -12,26 +12,33 @@
     <script src="js/send-email.js" defer></script>
 
 
-    <!-- Google Analytics tag -->
+    <!-- ===================================================== -->
+    <!-- Google Analytics 4 (GA4) Tracking -->
+    <!-- ===================================================== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-56T85QV373"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        // Google Analytics
+        // Initialize Google Analytics 4
         gtag('config', 'G-56T85QV373');
-
-        // Google Ads
-        // gtag('config', 'AW-339880408');
-
     </script>
 
 
-    <!-- Event snippet for Website traffic conversion page -->
-    <!-- <script>
-        gtag('event', 'conversion', { 'send_to': 'AW-339880408/DvzxCMLRl9ICENjTiKIB' }); 
-    </script> -->
+
+    <!-- ===================================================== -->
+    <!-- Google Ads Conversion Tracking -->
+    <!-- ===================================================== -->
+    <!-- Replace IDs below with your actual Google Ads IDs -->
+    <script>
+        // Initialize Google Ads tracking
+        ///gtag('config', 'AW-339880408');
+
+        // Count a conversion when this page is viewed
+        ////gtag('event', 'conversion', { 'send_to': 'AW-339880408/DvzxCMLRl9ICENjTiKIB' });
+    </script>
+
 
 </head>
 
