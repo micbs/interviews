@@ -201,12 +201,14 @@
     <footer>
         <label>&copy;</label>
         <label>כל הזכויות שמורות לחברת Interviews</label>
-        <label>2025</label>
+        <label id="currentYear"></label>
     </footer>
 
 
 
     <script>
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         const observer = new IntersectionObserver(entries =>
         {
