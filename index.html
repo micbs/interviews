@@ -199,9 +199,16 @@
     </main>
 
     <footer>
-        <label>&copy;</label>
-        <label>כל הזכויות שמורות לחברת Interviews</label>
-        <label id="currentYear"></label>
+        <p>
+            <label id="currentYear"></label>
+            <label dir="rtl">כל הזכויות שמורות לחברת Interviews</label>
+            <label>&copy;</label>
+        </p>
+        <p>
+            Built by <a href="https://FixMyWeb.co.il" target="_blank">FixMyWeb</a>
+        </p>
+        <p>Hosted by GitHub pages</p>
+        <p>Domain by Box.co.il</p>
     </footer>
 
 
@@ -210,12 +217,9 @@
 
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        const observer = new IntersectionObserver(entries =>
-        {
-            entries.forEach(entry =>
-            {
-                if (entry.isIntersecting)
-                {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
                     entry.target.children[0].classList.add("fromLeft");
                     entry.target.children[1].classList.add("fromRight");
                 }
@@ -231,14 +235,12 @@
 
 
 
-        (function ()
-        {
+        (function () {
             // Google Apps Script Web App URL
             const SHEET_URL = "https://script.google.com/macros/s/AKfycbyXfkd7GQ8QIe4YV5NfGNljqkeUeswbrDIuokQSXQjdaOhZtax9FjlEyDpKiw6ZA6NYeQ/exec";
 
             // Helper: get query parameter
-            function getParam(name)
-            {
+            function getParam(name) {
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get(name);
             }
@@ -248,8 +250,7 @@
 
             const gclid = "hello";
 
-            if (gclid)
-            {
+            if (gclid) {
                 const payload = {
                     gclid: gclid,
                     url: window.location.href,

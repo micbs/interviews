@@ -57,7 +57,7 @@ header h5 {
   margin-block: 10px;
 }
 
-@media (width <= 700px) {
+@media (width <=700px) {
   header {
     grid-template-columns: 1fr;
   }
@@ -82,7 +82,8 @@ header h5 {
 
 section {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Equal width columns */
+  grid-template-columns: 1fr 1fr;
+  /* Equal width columns */
   align-items: stretch;
   overflow: hidden;
 }
@@ -95,7 +96,7 @@ section img {
   opacity: 0;
 }
 
-section > div {
+section>div {
   display: flex;
   align-items: center;
   font-size: 24px;
@@ -124,10 +125,11 @@ section > div {
   }
 }
 
-@media (width <= 940px) {
+@media (width <=940px) {
   section {
     display: grid;
-    grid-template-columns: 1fr; /* Equal width columns */
+    grid-template-columns: 1fr;
+    /* Equal width columns */
     align-items: stretch;
   }
 
@@ -140,7 +142,7 @@ section > div {
   }
 }
 
-@media (width <= 500px) {
+@media (width <=500px) {
   section div {
     padding-inline: 30px;
     padding-block: 60px;
@@ -148,15 +150,21 @@ section > div {
 }
 
 footer {
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  column-gap: 8px;
-  flex-direction: row-reverse;
+  padding-block: 40px;
+  background: black;
+  color: white;
+  margin-top: 30px;
+
 }
 
-footer label {
-  direction: rtl;
+footer p {
+  text-align: center;
+  font-size: 14px;
+  padding-block: 2px;
+}
+
+footer a {
+  color: white;
 }
 
 /*************************************************************/
@@ -174,6 +182,7 @@ footer label {
   margin: 0;
   /* background-color: aqua; */
 }
+
 .contact-form input {
   font-size: 20px;
   font-family: Assistant-Regular;
@@ -224,11 +233,12 @@ footer label {
   direction: rtl;
 }
 
-@media (width <= 500px) {
+@media (width <=500px) {
   .contact-form {
     padding: 50px 20px;
   }
 }
+
 /*************************************************************/
 
 #packages_container {
@@ -243,7 +253,7 @@ footer label {
   text-align: center;
 }
 
-#packages_container > p {
+#packages_container>p {
   text-align: center;
   padding-bottom: 24px;
 }
@@ -256,7 +266,7 @@ footer label {
   gap: 60px;
 }
 
-.packages > div {
+.packages>div {
   border-radius: 10px;
   text-align: center;
   padding-bottom: 20px;
@@ -265,7 +275,7 @@ footer label {
   border-radius: 20px;
 }
 
-.packages > div h2 {
+.packages>div h2 {
   margin: 0;
   padding-block: 10px;
   border-radius: 20px 20px 0 0;
@@ -273,11 +283,11 @@ footer label {
   background-color: black;
 }
 
-.packages > div > div {
+.packages>div>div {
   padding: 20px;
 }
 
-.packages > div p {
+.packages>div p {
   margin: 0;
   padding-bottom: 5px;
   text-align: right;
@@ -309,8 +319,7 @@ footer label {
   display: inline-block;
   width: 12px;
   height: 12px;
-  background: url('data:image/svg+xml;utf8,<svg width="12" height="12" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>')
-    no-repeat center center;
+  background: url('data:image/svg+xml;utf8,<svg width="12" height="12" fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>') no-repeat center center;
   background-size: contain;
 }
 
@@ -321,7 +330,7 @@ footer label {
   left: 0;
 }
 
-@media (width <= 1200px) {
+@media (width <=1200px) {
   .packages {
     max-width: 600px;
     margin: auto;
@@ -329,24 +338,26 @@ footer label {
     gap: 40px;
   }
 
-  .packages > :nth-child(1) {
+  .packages> :nth-child(1) {
     order: 3;
   }
-  .packages > :nth-child(2) {
+
+  .packages> :nth-child(2) {
     order: 2;
   }
-  .packages > :nth-child(3) {
+
+  .packages> :nth-child(3) {
     order: 1;
   }
 }
 
-@media (width <= 700px) {
+@media (width <=700px) {
   .packages {
     max-width: 400px;
   }
 }
 
-@media (width <= 500px) {
+@media (width <=500px) {
   .packages {
     max-width: 300px;
   }
